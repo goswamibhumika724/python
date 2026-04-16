@@ -4,14 +4,14 @@
 #toYen()
 #toPound()
 
-def dollartorupees(dollar):
-    return dollar * 83
+def rupeestodollar(rupees):
+    return rupees / 83
 
-def eurotorupees(euro):
-    return euro * 90
+def rupeestoeuro(rupees):
+    return rupees / 90
 
-def yentorupees(yen):
-    return yen * 0.55
+def rupeestoyen(rupees):
+    return rupees / 0.55
 
-def poundtorupees(pound):
-    return pound * 105
+def rupeestopound(rupees):
+    return rupees / 105
