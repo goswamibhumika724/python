@@ -3,6 +3,6 @@
 balls = int(input('enter balls'))
 
 hours = balls // 60
-hours = hours % 60
+balls = balls % 60
 
 print('balls=',balls,'hours=',hours)
