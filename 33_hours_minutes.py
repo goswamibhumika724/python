@@ -3,6 +3,7 @@
 #input : minutes 79 output : hours 1 and minutes19
 #input : minutes 49 output : hours 0 and minutes 49
 
+
 minutes = int(input('enter given minutes'))
 
 #minutes = 75
