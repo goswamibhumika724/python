@@ -2,6 +2,6 @@
 grams = int(input('enter gram'))
 
 kilograms = grams // 1000
-kilograms = kilograms % 1000
+grams = grams % 1000
 
 print('grams=',grams,'kilograms=',kilograms)
