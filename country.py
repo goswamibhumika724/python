@@ -1,29 +1,27 @@
-europe_countries = [
-    "Albania", "Andorra", "Armenia", "Austria", "Azerbaijan",
-    "Belarus", "Belgium", "Bosnia and Herzegovina", "Bulgaria",
-    "Croatia", "Cyprus", "Czech Republic",
-    "Denmark",
-    "Estonia",
-    "Finland", "France",
-    "Georgia", "Germany", "Greece",
-    "Hungary",
-    "Iceland", "Ireland", "Italy",
-    "Kazakhstan", "Kosovo",
-    "Latvia", "Liechtenstein", "Lithuania", "Luxembourg",
-    "Malta", "Moldova", "Monaco", "Montenegro",
-    "Netherlands", "North Macedonia", "Norway",
-    "Poland", "Portugal",
-    "Romania", "Russia",
-    "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland",
-    "Turkey",
-    "Ukraine", "United Kingdom",
-    "Vatican City"
+africa_countries = [
+    "Algeria", "Angola",
+    "Benin", "Botswana", "Burkina Faso", "Burundi",
+    "Cabo Verde", "Cameroon", "Central African Republic", "Chad", "Comoros", "Congo (Republic)", "Congo (Democratic Republic)",
+    "Djibouti",
+    "Egypt", "Equatorial Guinea", "Eritrea", "Eswatini", "Ethiopia",
+    "Gabon", "Gambia", "Ghana", "Guinea", "Guinea-Bissau",
+    "Ivory Coast",
+    "Kenya",
+    "Lesotho", "Liberia", "Libya",
+    "Madagascar", "Malawi", "Mali", "Mauritania", "Mauritius", "Morocco", "Mozambique",
+    "Namibia", "Niger", "Nigeria",
+    "Rwanda",
+    "Sao Tome and Principe", "Senegal", "Seychelles", "Sierra Leone", "Somalia", "South Africa", "South Sudan", "Sudan",
+    "Tanzania", "Togo", "Tunisia",
+    "Uganda",
+    "Zambia", "Zimbabwe"
 ]
+
 def getCountry():
-    global europe_countries
-    return europe_countries
+    global africa_countries
+    return africa_countries
 
 def hasCountry(countryName):
-    global europe_countries
-    result = countryName in europe_countries
+    global africa_countries
+    result = countryName in africa_countries
     return result
