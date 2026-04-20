@@ -1,6 +1,6 @@
-#write a program to convert cellcius into ferenhit
-cellcius = input("enter cellcius")
+#write a program to convert celsius into fahrenheit
+celsius = input("enter celsius")
 #convert
-cellcius = float(cellcius)
-ferenhit = (cellcius * 1.8)+32
-print("ferenhit=",ferenhit)
+celsius = float(celsius)
+fahrenheit = (celsius * 1.8)+32
+print("fahrenheit=",fahrenheit)
