@@ -1,25 +1,8 @@
-# 1) write a program to convert 24 hours time into 12 hours format time and display it with AM PM message. 
-# input : 15 hours 
-# output  3 PM 
-
-# input : 11 hours 
-# output  11 AM 
-
-# input : 25 hours 
-# output  invalid input 
-
-hours = int(input('enter hours'))
-
-difference  = hours - 12
-# == != < > <= >=
-if difference>0:
-    print(f"format time with{difference}pm")
-
-difference = hours - 12
-if difference>0:
-    print(f"format time with{difference}am")
-
-difference = hours - 12
-if difference>0:
-    print(f"invalid output{difference}")
-    
+#write a program to accept hours in 24 hours format from user and convert it into 12 hours format
+hours = int(input("Enter hours"))
+if hours>12:
+    hours = hours - 12 
+    msg = ' PM'
+else:
+    msg = ' AM'
+print(f" {hours} {msg}")
