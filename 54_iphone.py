@@ -7,17 +7,17 @@
 price2 = usa_price * dollar
 5 compare indian price with price2(price of iphone in usa in indian rupees)
 '''
-indian_rupees = int(input('enter price'))
+indian_price = int(input('enter price'))
 usa_price = int(input('enter price'))
 dollar = int(input('enter rate'))
 price2 = usa_price * dollar
 print(price2)
 
-if indian_rupees>0:
-    print(f"price of iphone{indian_rupees}")
+if indian_price>price2:
+    print("usa_price is cheaper")
 
-if price2>0:
-    print(f"price of{price2}")  
+if price2>indian_price:
+    print("indian_price is cheaper")  
 
 
 
