@@ -1,11 +1,11 @@
 #write a program to findout area of circle 
-area = input("area")
+redius = input("redius")
 
 #area of circle
-area = float(area)
+redius = int(redius)
 
 #process
-area = 3.14 * 40 * 40
+area = 3.14 * redius * redius
 
 #output
 print("area=",area)
