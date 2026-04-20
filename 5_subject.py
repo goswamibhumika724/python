@@ -1,8 +1,8 @@
 #write a program to make sum of 3 user given 3 subject marks (english,maths science) and display it
 
-english = input("enter english")
-maths = input("enter maths")
-science = input("enter science")
+english = input("enter english marks")
+maths = input("enter maths marks")
+science = input("enter science marks")
 
 english = int(english)
 maths = int(maths)
