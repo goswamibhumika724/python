@@ -3,5 +3,6 @@
 inches = int(input('enter inches'))
 
 foot = inches // 12
-foot = foot % 12
+inches = inches % 12
 print('inches=',inches,'foot=',foot)
+
