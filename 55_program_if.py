@@ -7,10 +7,10 @@ average = int(input('enter average'))
 petrol = int(input('enter petrol'))
 kilometer = int(input('enter kilometer'))
 
-car = average * petrol 
+car = (kilometer / average) * petrol 
 print(car)
-if car>0:
-    print(f"price of car{car}")
-if train>0:
-    print(f"price of train{train}")    
+if car>train:
+    print("train is cheaper")
+if train>car:
+    print("car is cheaper")    
 
