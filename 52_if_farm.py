@@ -1,21 +1,19 @@
 #write a program to accept length and width of two different farm from user. and findout & display which farm is bigger 
 #input length and width
 
-length = int(input('enter length'))
-width = int (input('enter width'))
+length1 = int(input('enter length1'))
+width1 = int (input('enter width1'))
+area1 = length1 * width1
 
+length2 = int(input('enter length2'))
+width2 = int (input('enter width2'))
+area2 = length2 * width2
 
-area1 = length * width
 #== != < > <= >=
-if area1>0:
-    print(f"length1 and width1{area1}")
+if area1>area2:
+    print("area1 is bigger")
+if area2>area1:
+    print("area2 is bigger")
 
-length = int(input('enter length'))
-width = int(input('enter width'))
 
-area2 = length * width
-if area2>0:
-    print(f"length and width{area2}")
 
-area = area1>area2
-print(area)
