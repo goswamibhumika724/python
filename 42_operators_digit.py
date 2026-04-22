@@ -8,7 +8,7 @@ amount = int(input("enter amount"))
 last = amount % 10 #7
 print(last)
 
-remaining = amount // 10 #76
+remaining = amount // 10 #56
 print(remaining)
 
 middle = remaining % 10 #6
