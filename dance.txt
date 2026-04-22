@@ -1,0 +1,38 @@
+1 Bharatanatyam
+2 Kathak
+3 Kathakali
+4 Kuchipudi
+5 Odissi
+6 Manipuri
+7 Mohiniyattam
+8 Sattriya
+9 Chhau
+10 Yakshagana
+11 Bhangra
+12 Ghoomar
+13 Garba
+14 Dandiya Raas
+15 Lavani
+16 Bihu
+17 Giddha
+18 Dumhal
+19 Rouf
+20 Kalbelia
+21 Karma
+22 Bagurumba
+23 Jhumur
+24 Raut Nacha
+25 Laho
+26 Singhi Chham
+27 Thang Ta
+28 Nati
+29 Panthi
+30 Padayani
+31 Theyyam
+32 Ottamthullal
+33 Kummi
+34 Karakattam
+35 Mayilattam
+36 Rangma
+37 Wancho Dance
+38 Cheraw
