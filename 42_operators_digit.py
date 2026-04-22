@@ -3,7 +3,7 @@
 
 amount = 567
 
-amount = int(input("enter input"))
+amount = int(input("enter amount"))
 
 last = amount % 10 #7
 print(last)
