@@ -6,4 +6,6 @@ for item in numbers:
     reminder = item % 10
     if reminder == 0:
         print(item,end= ' ')
-    print('numbers of divisible values=',item)
+        count = count + 1
+
+print(f'numbers of divisible values=',count)
