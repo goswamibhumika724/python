@@ -27,4 +27,4 @@ else:
 
 netIncome = grossIncome - tax 
 
-print(f"gross income {grossIncome} tax = {tax} net income = {netIncome}")
+print(f"gross income = {grossIncome} tax = {tax} net income = {netIncome}")
