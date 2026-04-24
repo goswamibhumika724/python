@@ -4,5 +4,5 @@ gap = 1
 
 while number<=1000:
     print(number)
-    number * gap 
+    number = number + gap 
     gap = gap + 1
