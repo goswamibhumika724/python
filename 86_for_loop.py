@@ -8,4 +8,4 @@ for item in numbers:
         print(item,end= ' ')
         count = count + 1
 
-print(f'numbers of divisible values=',count)
+print(f'numbers of divisible by 10 values=',count)
