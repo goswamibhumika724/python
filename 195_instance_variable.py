@@ -16,6 +16,7 @@ class product:
         print('name',self.name)
         print('price',self.price)
         print('weight',self.weight)
+        print('shop',product.shop)
 
     def pricepergram(self):
           if self.weight != 0:

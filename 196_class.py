@@ -11,12 +11,14 @@ class tour:
         self.days = days
         self.price = price
         self.detail = detail 
+
     def display(self):
         print('id',self.id)
         print('title',self.title)
         print('days',self.days)
         print('price',self.price)
         print('detail',self.detail)
+        print('operator',tour.operator)
 
 
 
