@@ -1,0 +1,83 @@
+## Part 1: Table Creation Exercises
+
+1. Create a table named `student` with the following fields:
+create table student (
+    id int PRIMARY KEY AUTO_INCREMENT, 
+    fullname VARCHAR(128) NOT NULL, 
+    gender VARCHAR(6) NOT NULL, 
+    dob date not null, 
+    email varchar(128) unique not null, 
+    mobile varchar(10) unique not null
+    )
+
+Create a table named `employee` with:
+create table employee
+    (empid int PRIMARY KEY AUTO_INCREMENT, 
+    empname VARCHAR(128) NOT NULL,
+    salary float check (salary > 10000),
+    department VARCHAR(50),
+    joining_date DATE)
+
+INSERT INTO employee (empid, empname, salary, department, joining_date) VALUES
+(0, 'Aarav Sharma', 45000.00, 'IT', '2023-05-12'),
+(0, 'Aadhya Iyer', 58000.00, 'HR', '2024-01-15'),
+(0, 'Vivaan Patel', 32000.00, 'Finance', '2023-11-05'),
+(0, 'Ananya Reddy', 62000.00, 'Marketing', '2022-02-18'),
+(0, 'Kabir Singh', 75000.00, 'IT', '2021-07-30'),
+(0, 'Ishani Joshi', 41000.00, 'Operations', '2024-04-14'),
+(0, 'Arjun Nair', 53000.00, 'Sales', '2023-12-25'),
+(0, 'Meera Chatterjee', 67000.00, 'HR', '2022-08-08'),
+(0, 'Aditya Verma', 80000.00, 'Finance', '2021-01-19'),
+(0, 'Riya Gupta', 49000.00, 'Marketing', '2024-06-01');
+
+Create a table named `product` with:
+create table product
+    (productid INT PRIMARY KEY AUTO_INCREMENT,
+    productname VARCHAR(128) NOT NULL,
+    price float cheak(price > 0),
+    stock int,
+    status VARCHAR(50) DEFAULT 'Available'
+);
+
+INSERT INTO product (productid, productname, price, stock, status) VALUES
+(0, 'iPhone 15 Pro', 129900.00, 15, 'Available'),
+(0, 'Galaxy S24 Ultra', 124999.00, 8, 'Available'),
+(0, 'OnePlus 12', 64999.00, 25, 'Available'),
+(0, 'Redmi Note 13 Pro', 25999.00, 0, 'Out of Stock'),
+(0, 'Vivo V30 Pro', 41999.00, 3, 'Available');
+
+
+
+   
+Create a table named `course` with:
+create table course(
+    courseid INT PRIMARY KEY AUTO_INCREMENT,
+    coursename VARCHAR(128) NOT NULL,
+    fees INT ,
+    duration VARCHAR(50)
+)
+INSERT INTO course (courseid, coursename, fees, duration) VALUES
+(0, 'Full Stack Web Development', 45000.00, '6 Months'),
+(0, 'Data Science & Machine Learning', 65000.00, '8 Months'),
+(0, 'UI/UX Design Masterclass', 25000.00, '3 Months'),
+(0, 'Cyber Security & Ethical Hacking', 55000.00, '6 Months'),
+(0, 'Cloud Computing (AWS/Azure)', 40000.00, '4 Months'),
+(0, 'Digital Marketing Specialist', 18000.00, '3 Months'),
+(0, 'Mobile App Development (Flutter)', 35000.00, '5 Months');
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
