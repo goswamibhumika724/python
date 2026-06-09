@@ -1,0 +1,46 @@
+1. List all customers along with their sales representative's first name and last name (equi join on `salesRepEmployeeNumber`).
+    SELECT 
+    c.customerName, 
+    e.firstName, 
+    e.lastName
+    FROM customers c, employees e
+    WHERE c.salesRepEmployeeNumber = e.employeeNumber
+ 
+
+2. Find all orders placed by customers from 'USA'. Show `orderNumber`, `customerName`, and `orderDate`.
+   select c.customerName, o.ordernumber, o.orderdate from customers c, orders o where c.customerNumber = o.customerNumber and c.country = 'usa'
+
+3. Display product details (`productName`, `productLine`) along with the product line's text description.
+   select p.productName,p.productLine,pd.textdescription from products p,productLines pd where p.productline = pd.productline
+
+4. Show all employees and their office city and country.
+   select e.firstname, e.lastname, o.officecode, o.city, o.country  from employees e, offices o where e.officecode = o.officecode
+
+5. List all payments with the corresponding customer name and amount.
+   select c.customerName,p.amount from customers c, payments p where c.customerNumber = p.customerNumber
+
+6. Find all order details (`orderNumber`, `productCode`, `quantityOrdered`) with the product name.
+   select o.ordernumber,o.productcode,o.quantityOrdered,p.productName from orderdetails o, products p where o.productCode = p.productCode
+
+7. Show customers from 'France' and their sales rep's job title.
+   select c.customerName,c.country,e.firstName,e.lastName,e.jobtitle from customers c, employees e where c.salesRepEmployeeNumber = e.employeeNumber
+  AND c.country = 'France'
+
+8. Display all products in the 'Classic Cars' product line with their buy price and MSRP.
+   select p.productName ,p.productLine,p.buyprice,p.MSRP from productLines pd, products p where p.productline = pd.productline and p.productLine = 'Classic Cars' 
+
+9. List employees who report to 'Diane Murphy' (use equi join on `reportsTo`).
+   SELECT 
+    e.employeeNumber AS 'Employee ID',
+    e.firstName AS 'First Name',
+    e.lastName AS 'Last Name',
+    e.jobTitle AS 'Job Title',
+    m.firstName AS 'Manager First Name',
+    m.lastName AS 'Manager Last Name'
+FROM employees e, employees m 
+WHERE e.reportsTo = m.employeeNumber -- આ Equi-Join શરત છે
+  AND m.firstName = 'Diane' 
+  AND m.lastName = 'Murphy';
+
+10. Show all orders that are 'Shipped' along with the customer name.
+    select c.customerName, o.orderNumber,o.shippeddate,o.status from customers c, orders o where c.customerNumber = o.customerNumber and o.status = 'Shipped'
