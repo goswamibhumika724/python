@@ -454,4 +454,4 @@ display customer wise total payment amount of those customers who have paid more
 select customerNumber,sum(amount) from payments group by customerNumber having sum(amount)>500000
 
 display count of orders & customerNumber received by each customers of those customer who have given more then 5 orders .
-select customerNumber,count(*) from orders group by customerNumber having count(*)>5
+select customerNumber,count(*) from orders group by customerNumber having count(*)>5 
