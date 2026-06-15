@@ -274,5 +274,35 @@ INSERT INTO course (courseid, coursename, fees, duration) VALUES
     GROUP BY gender
     HAVING SUM(weight) > 1000
    
-   
-   
+ Part 11: Constraint Exercises
+  
+71. Try inserting a NULL value into fullname.
+INSERT INTO teacher (id, fullname) VALUES (100, NULL);   
+
+72. Try inserting duplicate email values.
+  INSERT INTO teacher (id, email, mobile) 
+VALUES (999, 'kunal@gmail.com', '9999999999');
+
+73. Try inserting duplicate mobile numbers.
+  insert into teacher (id,mobile,email)
+  values (99,'8990765532','vishakha@gmail.com')
+
+74. Try inserting a negative weight.
+   insert into teacher (fullname,weight,email,mobile)
+   values ('monika sharma',66,'anita.sharma@email.com','9882885700')
+
+75. Insert a record without specifying the AUTO_INCREMENT field.
+  
+INSERT INTO teacher (fullname, weight, email, mobile)
+VALUES ('Rahul Verma', 72, 'rahul.verma@email.com', '9123456789');
+
+76. Insert a record without specifying a DEFAULT column.
+ 
+INSERT INTO teacher (fullname, weight, email, mobile)
+VALUES ('aditi bhatia', 78, 'aditi.@email.com', '9887903312')
+
+77. Observe which constraints prevent insertion.
+ INSERT INTO teacher (id, fullname, email,mobile) 
+VALUES (9,'arjun nair', '9543210987', 'arjun.@gmail.com') #they have an error because id,fullname,mobile and email are same it's already in teacher table
+
+---

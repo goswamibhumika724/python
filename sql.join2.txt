@@ -44,3 +44,35 @@ WHERE e.reportsTo = m.employeeNumber -- આ Equi-Join શરત છે
 
 10. Show all orders that are 'Shipped' along with the customer name.
     select c.customerName, o.orderNumber,o.shippeddate,o.status from customers c, orders o where c.customerNumber = o.customerNumber and o.status = 'Shipped'
+
+
+11. List all customers and their sales representative's name (use LEFT JOIN). Include customers who have no sales rep.
+    select c. customerNumber, c.customerName,c.salesRepEmployeeNumber,e.firstName as repfirstname,e.lastname as replastname from customers c left join employees e on 
+c.salesRepEmployeeNumber = e.employeeNumber  
+
+12. Show all employees and the customers they manage (use LEFT JOIN). Include employees with no customers.
+    select e.employeeNumber,e.firstName,e.lastName,c.customerNumber,c.customerName from employees e left join customers c on e.employeeNumber = c.salesRepEmployeeNumber
+
+13. List all products and how many times they have been ordered (use LEFT JOIN with `orderdetails`).
+   select p.productcode,p.productName,count(od.orderNumber) as timesordered from products p left join orderdetails od on p.productcode = od.productCode group by p.productname,p.productcode
+
+14. Show all offices and the number of employees in each office (use LEFT JOIN).
+    select o.officecode,o.city,o.country,e.firstname,e.lastname,e.employeeNumber from offices o left join employees e on o.officeCode = e.officeCode
+
+15. Display all customers and their total payment amount (use LEFT JOIN with `payments`).
+    select c.customerNumber,c.customerName,p.amount as total_payment_amount from customers c left join payments p on c.customerNumber = p.customerNumber
+
+16. Use RIGHT JOIN to show all employees and any customers they represent.
+    select  c.salesRepEmployeeNumber,e.employeeNumber,e.firstName,e.lastName from customers c right join employees e on c.salesRepEmployeeNumber = e.employeeNumber
+
+17. Use LEFT JOIN to list all product lines and the products in them.
+    select p.productline,pd.productCode,pd.productname from productlines p left join products pd on p.productline = pd.productline
+
+18. Show all orders and the customer name, including orders without a matching customer (if any).
+    select o.orderNumber,c.customerName,c.customerNumber from orders o left join customers c on o.customerNumber = c.customerNumber
+ 
+19. Find the total number of orders per customer. Show `customerName` and order count.
+    select c.customerNumber,c.customerName,count(o.ordernumber) as total_number_orders from customers c left join orders o on c.customerNumber = o.customerNumber group by c.customerName,c.customerNumber
+
+20. Calculate total sales amount (sum of `priceEach * quantityOrdered`) per product line.
+    select p.productcode,p.productline,p.productname,(o.priceEach * quantityOrdered) from orderdetails o right join products p on o.productcode = p.productcode
