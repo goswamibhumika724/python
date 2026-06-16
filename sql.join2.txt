@@ -76,3 +76,69 @@ c.salesRepEmployeeNumber = e.employeeNumber
 
 20. Calculate total sales amount (sum of `priceEach * quantityOrdered`) per product line.
     select p.productcode,p.productline,p.productname,(o.priceEach * quantityOrdered) from orderdetails o right join products p on o.productcode = p.productcode
+
+
+21. Find the average credit limit of customers by country.
+    SELECT 
+    c.country,c.customerName,c.customerNumber, 
+    AVG(c.creditLimit) AS average_credit_limit 
+    FROM 
+    customers c
+    INNER JOIN 
+    orders o ON c.customerNumber = o.customerNumber
+    GROUP BY 
+    c.country 
+    LIMIT 0, 1000;
+
+22. Show the number of employees per office city.
+    select o.city,count(e.employeeNumber) as number_of_employees from employees e inner join offices o on e.officecode = o.officecode group by o.city
+
+23. Find the total payment amount received from each customer.
+    select c.customerNumber,c.customerName,sum(p.amount) as total_payment_amount from customers c left join payments p on c.customerNumber = p.customerNumber group by c.customerNumber,c.customerName
+
+24. Count how many products are in each product line.
+    
+SELECT 
+    pl.productLine,
+    COUNT(p.productCode) AS total_products 
+FROM 
+    productlines pl
+LEFT JOIN 
+    products p ON pl.productLine = p.productLine
+GROUP BY 
+    pl.productLine;
+
+25. Find the total quantity ordered for each product (top 5 by quantity).
+    select p.productCode,p.productName,sum(od.quantityOrdered) as total_qauntity_ordered from products p inner join orderdetails od on p.productcode = od.productcode group by p.productcode,p.productname order by total_qauntity_ordered desc
+
+26. Find customers who have placed more than 5 orders.
+    select c.customerNumber,c.customerName,count(o.ordernumber) as total_orders from customers c inner join orders o on c.customerNumber = o. customerNumber group by c.customerNumber,c.customerName HAVING count(o.orderNumber) > 5
+
+27. Show product lines where the average MSRP is greater than 100.
+SELECT 
+    pl.productLine, 
+    AVG(p.MSRP) AS average_msrp 
+FROM 
+    productlines pl
+INNER JOIN 
+    products p ON pl.productLine = p.productLine 
+GROUP BY 
+    pl.productLine 
+HAVING 
+    AVG(p.MSRP) > 100;
+    
+28. Find sales reps (employees) who have managed more than 10 customers.
+ select e.employeeNumber,e.firstname,e.lastname as sales_rep_name ,count(customerNumber) as total_customers from employees e inner join customers c on e.employeeNumber = c.salesRepEmployeeNumber group by e.employeeNumber,e.firstname,e.lastname HAVING count(customerNumber) >10
+   
+
+29. List countries where the total payment amount exceeds 500,000.
+ select c.country,sum(p.amount) from customers c inner join payments p on c.customerNumber = p.customerNumber group by country having sum(p.amount) > 500000
+
+30. Find offices that have more than 5 employees.
+select o.officeCode,o.country,count(e.employeeNumber) as total_employees from offices o inner join employees e on o.officecode = e.officecode group by o.officecode,o.country HAVING count(e.employeeNumber) > 5
+
+31. List customers sorted by their total payment amount (highest first).
+select c.customerNumber,c.customerName,sum(p.amount) as total_payment_amount from customers c inner join payments p on c.customerNumber = p.customerNumber group by customerNumber,customerName order by total_payment_amount desc
+
+32. Show product lines sorted by the number of products in them (descending).
+select pd.productline,count(p.productcode) as number_of_products from productlines pd inner join products p on pd.productline = p.productline group by productline order by number_of_products desc
