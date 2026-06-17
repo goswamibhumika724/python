@@ -42,3 +42,5 @@ plt.tick_params(axis='x', bottom=True, top=False, labelbottom=True, labeltop=Fal
 plt.colorbar(label='Temperature (°c)')
 plt.tight_layout()
 plt.show()
+#print hello world
+#print current date

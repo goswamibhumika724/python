@@ -142,3 +142,57 @@ select c.customerNumber,c.customerName,sum(p.amount) as total_payment_amount fro
 
 32. Show product lines sorted by the number of products in them (descending).
 select pd.productline,count(p.productcode) as number_of_products from productlines pd inner join products p on pd.productline = p.productline group by productline order by number_of_products desc
+
+
+33. Display employees sorted by the number of customers they manage.
+select e.firstname,e.lastname, count(c.customerNumber) as customer_count from employees e inner join customers c on e.employeeNumber = c.salesRepEmployeeNumber group by e.employeeNumber,e.firstname,e.lastname order by customer_count desc
+
+34. List countries with their total credit limit (sorted descending).
+select c.country,sum(c.creditLimit) as total_credit_limit from employees e inner join customers c on e.employeeNumber = c.salesRepEmployeeNumber group by country order by total_credit_limit desc
+
+35. Show the top 10 most ordered products by total quantity.
+select p.productcode,p.productname,sum(od.quantityOrdered) as total_qauntity_ordered from products p inner join orderdetails od on p.productcode = od.productcode group by p.productcode,p.productname order by total_qauntity_ordered desc limit 0,10
+
+36. Show the top 5 customers by credit limit.
+SELECT 
+    customerName, 
+    creditLimit 
+FROM 
+    customers 
+ORDER BY 
+    creditLimit DESC 
+LIMIT 0,5;
+
+37. List the 10 most expensive products (by MSRP).
+select p.productcode,p.productname,p.msrp from products p order by msrp desc limit 0,10
+
+38. Show the 5 offices with the most employees.
+select o.officeCode,o.city,count(e.employeeNumber) as count_of_employees from employees e inner join offices o on e.officecode = o.officecode group by o.city,o.officecode order by count_of_employees desc limit 0,5
+
+39. Display the 10 largest orders by total value (`priceEach * quantityOrdered`).
+select od.ordernumber,sum(priceEach * quantityOrdered)as total_value from orderdetails od group by ordernumber order by total_value desc limit 0,10
+
+40. Find the 5 customers with the highest total payments.
+select c.customerNumber,c.customerName,sum(p.amount) as total_payment_amount from payments p inner join customers c on c.customerNumber = p.customerNumber group by customerNumber,customerName order by total_payment_amount desc limit 0,5
+
+41. For each sales rep, show the total sales amount they generated (join `employees` → `customers` → `orders` → `orderdetails`). Sort by total sales descending.
+select e.employeeNumber,e.firstName,e.lastname,sum(od.priceEach * quantityOrdered) as total_sales_amount from employees e inner join customers c on e.employeeNumber = c.salesRepEmployeeNumber inner join orders o on o.customerNumber = c.customerNumber inner join orderdetails od on o.ordernumber = od.ordernumber group by e.employeeNumber,e.firstName,e.lastName order by total_sales_amount desc 
+
+42. Find customers who have never placed an order (use LEFT JOIN).
+select c.customerName,c.customerNumber,o.orderNumber from customers c left join orders o on c.customerNumber = o.customerNumber where o.ordernumber is null
+
+43. Show product lines where total quantity sold is greater than 10,000 (use multiple joins + GROUP BY + HAVING).
+
+44. List the top 5 customers by total order value in 2004.
+
+45. Find employees who have no customers assigned and work in offices with more than 3 employees.
+
+46. Calculate the total revenue per country (join customers → orders → orderdetails). Show only countries with revenue > 200,000. Sort descending.
+
+47. Show the sales performance of each office: number of orders, total revenue, and average order value.
+
+48. Find products that have been ordered by customers from more than 3 different countries.
+
+49. List sales reps whose customers have an average credit limit higher than the company average.
+
+50. For each product line, show: Total products, Total quantity sold, Total revenue, Average price per unit sold. Filter lines with revenue > 500,000. Sort by revenue descending.
