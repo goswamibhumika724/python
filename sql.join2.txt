@@ -182,17 +182,25 @@ select e.employeeNumber,e.firstName,e.lastname,sum(od.priceEach * quantityOrdere
 select c.customerName,c.customerNumber,o.orderNumber from customers c left join orders o on c.customerNumber = o.customerNumber where o.ordernumber is null
 
 43. Show product lines where total quantity sold is greater than 10,000 (use multiple joins + GROUP BY + HAVING).
+select pl.productline,sum(od.quantityOrdered) as total_qauntity_sold from productlines pl inner join products p on pl.productline = p.productline inner join orderdetails od on p.productcode = od.productCode group by pl.productLine having sum(od.quantityOrdered) > 10000
 
 44. List the top 5 customers by total order value in 2004.
+select c.customerName,o.orderdate,sum(od.priceEach * quantityOrdered) as total_qauntity_ordered from customers c inner join orders o on c.customerNumber = o.customerNumber inner join orderdetails od on o.ordernumber = od.ordernumber where o.orderdate between '2004-01-01' and '2004-12-31' group by c.customerNumber,c.customerName ORDER by total_qauntity_ordered desc limit 0,5
 
 45. Find employees who have no customers assigned and work in offices with more than 3 employees.
+SELECT e.employeeNumber,e.firstName,e.lastName,e.officeCode FROM employees e LEFT JOIN customers c ON e.employeeNumber = c.salesRepEmployeeNumber INNER JOIN offices o ON e.officeCode = o.officeCode WHERE c.customerNumber IS NULL  AND e.officeCode IN (SELECT officeCode FROM employees  GROUP BY officeCode  HAVING COUNT(employeeNumber) > 3 );
 
 46. Calculate the total revenue per country (join customers → orders → orderdetails). Show only countries with revenue > 200,000. Sort descending.
+SELECT c.country,SUM(od.priceEach * od.quantityOrdered) AS total_revenue FROM customers c INNER JOIN orders o ON c.customerNumber = o.customerNumber INNER JOIN orderdetails od ON o.orderNumber = od.orderNumber GROUP BY c.country HAVING SUM(od.priceEach * od.quantityOrdered) > 200000 ORDER BY total_revenue DESC;
 
 47. Show the sales performance of each office: number of orders, total revenue, and average order value.
+SELECT off.officeCode,off.city, COUNT(o.orderNumber) AS total_orders,SUM(o.order_total) AS total_revenue,AVG(o.order_total) AS average_order_value FROM offices off  INNER JOIN employees e ON off.officeCode = e.officeCode INNER JOIN customers c ON e.employeeNumber = c.salesRepEmployeeNumber INNER JOIN (SELECT orderNumber, customerNumber, SUM(priceEach * quantityOrdered) AS order_total FROM orders INNER JOIN orderdetails USING (orderNumber) GROUP BY orderNumber, customerNumber ) o ON c.customerNumber = o.customerNumber GROUP BY  off.officeCode, off.city
 
 48. Find products that have been ordered by customers from more than 3 different countries.
+SELECT p.productCode, p.productName,c.customerNumber,c.country FROM products p INNER JOIN orderdetails od ON p.productCode = od.productCode INNER JOIN orders o ON od.orderNumber = o.orderNumber INNER JOIN customers c ON o.customerNumber = c.customerNumber GROUP BY p.productCode, p.productName HAVING COUNT(DISTINCT c.country) > 3;
 
 49. List sales reps whose customers have an average credit limit higher than the company average.
+SELECT e.employeeNumber, e.firstName, e.lastName, AVG(c.creditLimit) AS rep_avg_credit FROM employees e INNER JOIN customers c ON e.employeeNumber = c.salesRepEmployeeNumber GROUP BY e.employeeNumber, e.firstName, e.lastName HAVING AVG(c.creditLimit) > (SELECT AVG(creditLimit) FROM customers);
 
 50. For each product line, show: Total products, Total quantity sold, Total revenue, Average price per unit sold. Filter lines with revenue > 500,000. Sort by revenue descending.
+SELECT p.productLine, pl_count.total_products, SUM(od.quantityOrdered) AS total_quantity_sold, SUM(od.priceEach * od.quantityOrdered) AS total_revenue, SUM(od.priceEach * od.quantityOrdered) / SUM(od.quantityOrdered) AS avg_price_per_unit FROM products p INNER JOIN orderdetails od ON p.productCode = od.productCode INNER JOIN (SELECT productLine, COUNT(productCode) AS total_products FROM products GROUP BY productLine) pl_count ON p.productLine = pl_count.productLine GROUP BY p.productLine, pl_count.total_products HAVING total_revenue > 500000 ORDER BY total_revenue DESC;
