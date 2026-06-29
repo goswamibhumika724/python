@@ -2,7 +2,10 @@ SQL Command
 ---------------------------------
 What is constraint?
   constraint means rules that we apply on fields. this rules must be obeyed at the time of inserting or updating row in table. if these are violated (not followed)  then row will not be inserted/updated 
-
+note :
+if we change field name 
+sql command
+alter table bill_item rename column biilid to billid
  1. PRIMARY KEY Constraint
 - Description: Uniquely identifies each record in a table. 
     It cannot be NULL and must be unique.
