@@ -1,0 +1,16 @@
+Customer_ID,Age,Gender,City,First_Buy_Year,Phone_Model,Price,Monthly_Income
+1,18,Male,Ahmedabad,2018,iPhone X,89000,30000
+2,22,Female,Rajkot,2019,iPhone XR,76000,45000
+3,25,Male,Surat,2020,iPhone 11,68000,60000
+4,28,Female,Vadodara,2021,iPhone 12,79900,75000
+5,32,Male,Bhavnagar,2021,iPhone 12 Pro,119900,90000
+6,24,Female,Ahmedabad,2022,iPhone 13,79900,55000
+7,30,Male,Surat,2022,iPhone 13 Pro,119900,100000
+8,20,Female,Rajkot,2023,iPhone 14,79900,40000
+9,35,Male,Vadodara,2023,iPhone 14 Pro,129900,120000
+10,26,Female,Bhavnagar,2024,iPhone 15,79900,65000
+11,40,Male,Ahmedabad,2024,iPhone 15 Pro,134900,150000
+12,23,Female,Surat,2025,iPhone 16,79900,70000
+13,38,Male,Rajkot,2025,iPhone 16 Pro,119900,140000
+14,21,Female,Vadodara,2025,iPhone 15,79900,50000
+15,45,Male,Bhavnagar,2026,iPhone 16 Pro Max,144900,200000

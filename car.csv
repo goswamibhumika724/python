@@ -1,0 +1,16 @@
+UserID,Age,Gender,City,First_Car_Year,Car_Model,Car_Price,Monthly_Income
+1,22,Male,Ahmedabad,2018,Maruti Swift,650000,30000
+2,25,Female,Rajkot,2019,Hyundai i20,750000,45000
+3,28,Male,Surat,2020,Tata Nexon,950000,60000
+4,30,Female,Vadodara,2021,Hyundai Creta,1200000,75000
+5,35,Male,Bhavnagar,2021,Kia Seltos,1400000,90000
+6,26,Female,Ahmedabad,2022,Maruti Baleno,800000,50000
+7,32,Male,Surat,2022,Tata Harrier,1600000,100000
+8,24,Female,Rajkot,2023,Honda City,1100000,55000
+9,38,Male,Vadodara,2023,Toyota Innova,1900000,120000
+10,29,Female,Bhavnagar,2024,Mahindra XUV700,1800000,85000
+11,42,Male,Ahmedabad,2024,MG Hector,1700000,150000
+12,27,Female,Surat,2025,Hyundai Venue,900000,65000
+13,45,Male,Rajkot,2025,Toyota Fortuner,3500000,200000
+14,31,Female,Vadodara,2026,Kia Sonet,850000,70000
+15,50,Male,Bhavnagar,2026,BMW X1,5000000,300000

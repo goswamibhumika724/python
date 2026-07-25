@@ -19,3 +19,4 @@ except connector.Error as error:
     print("connection could not be created due to error,")
     print(error.errno)
     print(error.msg)
+    
