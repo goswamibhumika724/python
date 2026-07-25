@@ -59,7 +59,7 @@ def Searchtransaction():
 
         print("_" * 100)
 
-    input("Press any key to continue")
+    key = input("Press any key to continue")
 def Displaytransaction():
     sql = """
     SELECT id, tourid, amount, flag, description, challano, trandate

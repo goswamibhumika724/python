@@ -1,0 +1,21 @@
+--------------------------------------------------
+                PAYOUT INVOICE
+--------------------------------------------------
+Teacher Name : priya joshi
+Teacher Email: priya@gmail.com
+Period       : 2026-06-01 to 2026-07-10
+Payment Mode : Cash
+--------------------------------------------------
+Subject                   Duration(Min)   Amount
+--------------------------------------------------
+ccc                       60              1200.00   
+machine learning          90              1800.00   
+full stack development    90              1800.00   
+machine learning          90              1800.00   
+full stack development    120             2400.00   
+ccc                       60              1200.00   
+--------------------------------------------------
+Total Duration: 510 Minutes
+Total Payout  : INR 10200.00
+--------------------------------------------------
+Status        : Generated & Saved Successfully

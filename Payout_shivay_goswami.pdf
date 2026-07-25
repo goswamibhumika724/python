@@ -1,0 +1,22 @@
+--------------------------------------------------
+                PAYOUT INVOICE
+--------------------------------------------------
+Teacher Name : shivay goswami
+Teacher Email: Shivay@gmail.com
+Period       : 2026-03-12 to 2026-09-15
+Payment Mode : Cash
+--------------------------------------------------
+Subject                   Duration(Min)   Amount
+--------------------------------------------------
+machine learning          60              1200.00   
+full stack development    60              1200.00   
+machine learning          90              1800.00   
+ccc                       120             2400.00   
+full stack development    45              900.00    
+machine learning          60              1200.00   
+ccc                       60              1200.00   
+--------------------------------------------------
+Total Duration: 495 Minutes
+Total Payout  : INR 9900.00
+--------------------------------------------------
+Status        : Generated & Saved Successfully
