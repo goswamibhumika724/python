@@ -80,7 +80,7 @@ def Displaytransaction():
     if len(table) == 0:
         print("No transaction found")
     else:
-        print(f"{'id':<5} {'tourid':<8} {'amount':<12} {'type':<10} {'description':<30} {'challano':<12} {'date':<12}")
+        print(f"{'id':<5} {'tourid':<8} {'amount':<12} {'flag':<10} {'description':<30} {'challano':<12} {'trandate':<12}")
         print("_"*100)
 
         TotalIncome = 0
@@ -96,7 +96,7 @@ def Displaytransaction():
                 type = "Expense"
                 TotalExpense += row['amount']
 
-            print(f"{row['id']:<5} {row['tourid']:<8} {row['amount']:<12} {type:<10} {row['description']:<30} {row['challano']:<12} {str(row['trandate']):<12}")
+            print(f"{row['id']:<5} {row['tourid']:<8} {row['amount']:<12} {'flag':<10} {row['description']:<30} {row['challano']:<12} {str(row['trandate']):<12}")
 
             Count += 1
 
