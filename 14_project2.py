@@ -1,6 +1,6 @@
 import tour as t
 import transaction as tr
-import reports_2 as r
+import reports2 as r
 
 while True:
     print("\nPress 1 for tour management")

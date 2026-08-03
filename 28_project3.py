@@ -4,7 +4,7 @@ import subject as s
 import teacher as t
 import lecture as l 
 import payout as p
-import reports_3 as r
+import reports3 as r
 current_payout = None
 while True:
         print("\n================ MAIN MENU ================")
