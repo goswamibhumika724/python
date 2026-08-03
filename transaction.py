@@ -43,7 +43,7 @@ def Searchtransaction():
     if len(table) == 0:
         print("No transaction found")
     else:
-        print(f"{'id':<5} {'tourid':<8} {'amount':<10} {'type':<10} {'description':<25} {'challano':<12} {'date':<12}")
+        print(f"{'id':<5} {'tourid':<8} {'amount':<10} {'flag':<10} {'description':<25} {'challano':<12} {'trandate':<12}")
         print("_" * 100)
 
         for row in table:
