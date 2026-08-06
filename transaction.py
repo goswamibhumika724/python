@@ -19,7 +19,7 @@ def Addtransaction():
     database.connect.commit()
 
     print("Transaction Added Successfully")
-    key = input("Press any key to continue")
+key = input("Press any key to continue")
 
 def Searchtransaction():
     description = input("Enter Transaction Description : ")
@@ -57,7 +57,7 @@ def Searchtransaction():
 
         print("_" * 100)
 
-    key = input("Press any key to continue")
+key = input("Press any key to continue")
 def Displaytransaction():
     sql = """
     SELECT id, tourid, amount, flag, description, challano, trandate
@@ -107,7 +107,7 @@ def Displaytransaction():
         print(f"Total Expense     = {TotalExpense}")
         print(f"Balance           = {Balance}")
 
-    key = input("Press any key to continue")
+key = input("Press any key to continue")
 def Deletetransaction():
     Displaytransaction()
 
@@ -133,4 +133,4 @@ def Deletetransaction():
 
         print("Transaction deleted successfully")
 
-    key = input("Press any key to continue")
+key = input("Press any key to continue")
