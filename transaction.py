@@ -5,9 +5,7 @@ def Addtransaction():
     t.viewtour()
     tourid = input("Enter Tour ID :")
     amount = float(input("Enter Amount :"))
-
     flag = int(input("Enter Transaction Type (1=income,2=expense) :"))
-
     description = input("Enter Description : ")
     challano = input("Enter Challa No : ")
     trandate = input("Enter Transaction Date (YYYY-MM-DD) : ")
