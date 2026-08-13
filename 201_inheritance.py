@@ -60,7 +60,7 @@ h1 = int(input("Enter  Cylinder height"))
 #create Cylinder class object
 c2 = Cylinder(radius=r2,height=h1)
 surface_area = c2.getSurfaceArea()
-print("Surface Area of of Cylinder ",surface_area)
+print("Surface Area of Cylinder ",surface_area)
 
 
 
