@@ -11,7 +11,7 @@ pass_count = 0
 fail_count = 0
 for marks in students:
     print(marks,students[marks])
-    if students[marks]>35:
+    if students[marks] >=35:
          pass_count = pass_count + 1
 
     else:
