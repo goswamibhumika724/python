@@ -116,10 +116,10 @@ model.fit(machine, result)
 print("model training complete.....")
 
 # Predictions for new machine instances [Operating temperature in °C, Vibration level]
-machine_1 = np.array([[80.0, 2.8]])
-prediction = model.predict(machine_1)
-print("Machine_1 prediction (0: Operate Normally, 1: Fail) = ", prediction)
-print("Failure probability = ", model.predict_proba(machine_1))
+machine = np.array([[80.0, 2.8]])
+prediction = model.predict(machine)
+print("Machine prediction (0: Operate Normally, 1: Fail) = ", prediction)
+print("probability = ", model.predict_proba(machine))
 
 # Model accuracy
 print("Model accuracy = ", model.score(machine, result))
