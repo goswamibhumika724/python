@@ -36,7 +36,7 @@ labels = model.labels_
 #print(label)
 print("labels = ",labels)
 
-# print centeriods 
+# print centroids 
 print(model.cluster_centers_)
 
 #data 
