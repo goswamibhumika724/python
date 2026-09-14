@@ -4,14 +4,14 @@
 #toYen()
 #toPound()
 
-def rupeestodollar(rupees):
+def todollar(rupees):
     return rupees / 83
 
-def rupeestoeuro(rupees):
+def toeuro(rupees):
     return rupees / 90
 
-def rupeestoyen(rupees):
+def toyen(rupees):
     return rupees / 0.55
 
-def rupeestopound(rupees):
+def topound(rupees):
     return rupees / 105
