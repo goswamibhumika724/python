@@ -2,9 +2,9 @@ import currency
 
 rupees = int(input('enter rupees'))
 
-print('dollar',currency.todollar(rupees))
-print('euro',currency.toeuro(rupees))
-print('yen',currency.toyen(rupees))
-print('pound',currency.topound(rupees))
+print('Dollar',currency.todollar(rupees))
+print('Euro',currency.toeuro(rupees))
+print('Yen',currency.toyen(rupees))
+print('Pound',currency.topound(rupees))
 
 
