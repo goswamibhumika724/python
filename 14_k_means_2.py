@@ -8,9 +8,6 @@
 #  Purchase Frequency ordersyear
 #  Average Return Rate 
 
-# Finding the value of k Elbow Method
-# First standardize all three features using zscore Then run KMeans for k  1 to 8 and calculate WCSS From the elbow graph a clear bend can be seen at k  4
-
 # Clusters k  4
 
 #  Cluster 1  VIP Customers Spend a lot purchase frequently and have a low return rate
@@ -38,7 +35,7 @@ labels = model.labels_
 #print(label)
 print("labels = ",labels)
 
-# print centroids
+# print centroids 
 print(model.cluster_centers_)
 
 #data 

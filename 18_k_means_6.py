@@ -7,9 +7,6 @@
 #  Phosphorus mgkg
 #  Electrical Conductivity dSm
 
-# Finding the value of k Elbow Method
-# Run KMeans for k  1 to 7 and calculate WCSS The elbow appears at k  3
-
 # Clusters k  3
 
 #  Cluster 1  Poor Soil Low pH and low nitrogen and phosphorus The soil may need additional treatment

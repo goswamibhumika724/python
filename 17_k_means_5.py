@@ -40,7 +40,7 @@ print("labels = ",labels)
 print(model.cluster_centers_)
 
 #data 
-areas = [ "Aarav","Aditi","Rohan","Priya","Arjun", "Neha","Rahul","Sneha","Vikram","Pooja", "Karan","Ananya","Rajesh","Kavita","Amit", "Nisha","Suresh","Riya","Manish","Divya", "Akash","Simran","Nitin","Pallavi","Ravi", "Shreya","Vivek","Isha","Sanjay","Meera", "Harsh","Komal","Deepak","Swati","Yash", "Tanvi","Prakash","Anjali","Mohit","Payal", "Abhishek","Kajal","Rakesh","Mansi","Dhruv", "Sonal","Pankaj","Bhavna","Kunal","Radhika" ]
+areas = [ "Area1", "Area2", "Area3", "Area4", "Area5", "Area6", "Area7", "Area8", "Area9", "Area10", "Area11", "Area12", "Area13", "Area14", "Area15", "Area16", "Area17", "Area18", "Area19", "Area20", "Area21", "Area22", "Area23", "Area24", "Area25", "Area26", "Area27", "Area28", "Area29", "Area30", "Area31", "Area32", "Area33", "Area34", "Area35", "Area36", "Area37", "Area38", "Area39", "Area40", "Area41", "Area42", "Area43", "Area44", "Area45", "Area46", "Area47", "Area48", "Area49", "Area50" ]
 for area,data,label in zip(areas,X,labels): 
     print(f"Name : {area} data = {data} label = {label}")
 
