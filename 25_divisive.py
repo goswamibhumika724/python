@@ -89,7 +89,7 @@ X = df[
     [
         "GDP_per_capita",
         "Life_expectancy",
-        "Internet_usage",
+        "Internet_usage"
     ]
 ]
 
