@@ -1,3 +1,5 @@
+# Agglomerative Clustering (Bottom-Up)
+# 1) Customer Spending SegmentationScenario: A supermarket wants to group customers based on spending habits, starting from individual shoppers and pairing the most similar ones to find broad customer archetypes.Input Features ($X$):$X_1$: Annual income (in thousands of dollars)$X_2$: Average monthly spending score (1-100)Target Variable ($Y$): Assigned customer archetype (e.g., Cluster 0, Cluster 1)Practice Goal: Build a dendrogram to identify 3 main shopper profiles and output the cluster assignments.
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -21,16 +23,16 @@ data = {
 
     "AnnualIncome": [
         15, 18, 20,
-        45, 48, 50,
-        80, 85, 90,
-        30, 33, 35
+        45, 48, 52,
+        85, 90, 95,
+        22, 50, 88
     ],
 
-    "Purchases": [
-        3, 4, 5,
-        10, 11, 12,
-        20, 21, 22,
-        7, 8, 8
+    "SpendingScore": [
+        80, 85, 78,
+        45, 50, 48,
+        15, 20, 18,
+        82, 52, 22
     ]
 }
 
@@ -40,7 +42,7 @@ df = pd.DataFrame(data)
 #select input features
 x = df[[
     "AnnualIncome",
-    "Purchases"
+    "SpendingScore"
 ]]
 
 print(x)
@@ -63,7 +65,7 @@ plt.show()
 
 
 
-model = AgglomerativeClustering(n_clusters=4,linkage="ward")
+model = AgglomerativeClustering(n_clusters=3,linkage="ward")
 model.fit_predict(x_scaled)
 
 print(model.labels_)
@@ -73,14 +75,14 @@ print(df)
 #create chart
 plt.figure(figsize=(10,8))
 plt.title("agglomerative hierarchical clustering")
-plt.scatter(df['AnnualIncome'],df['Purchases'],c=df['clusters'])
+plt.scatter(df['AnnualIncome'],df['SpendingScore'],c=df['clusters'])
 plt.xlabel("Annual Income")
-plt.ylabel("Purchases")
+plt.ylabel("Spending Score")
 #add label for each and every circle
 for index in range(len(df)):
     plt.annotate(df.loc[index,'Customer'],(
         df.loc[index,'AnnualIncome'],
-        df.loc[index,'Purchases']
+        df.loc[index,'SpendingScore']
     ),xytext=(5,5),textcoords="offset points")
 plt.show()
 exit()
