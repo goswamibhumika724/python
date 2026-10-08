@@ -110,8 +110,8 @@ for _, rule in filtered_rules.head(20).iterrows():
     consequent = ", ".join(rule["consequents"])
 
     print(f"{antecedent} -> {consequent}")
-    print(f"Support: {rule['support']:.2%}")
-    print(f"Confidence: {rule['confidence']:.2%}")
+    print(f"Support: {rule['support']:.2f}")
+    print(f"Confidence: {rule['confidence']:.2f}")
     print(f"Lift: {rule['lift']:.2f}")
     print("-" * 50)
 
