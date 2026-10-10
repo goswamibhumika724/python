@@ -18,7 +18,7 @@ df_subset = df[columns_to_mine]
 df_encoded = pd.get_dummies(df_subset).astype(bool)
 # print(df_encoded.head(10))
 # exit(1)
-#findout frequent symptom 
+#findout frequent data
 frequent_itemsets = fpgrowth(df_encoded,min_support=0.01,use_colnames=True)
 rules = association_rules(frequent_itemsets,metric="confidence",min_threshold=0.05)
 rules = rules[rules['lift']>1]
