@@ -76,3 +76,7 @@ plt.title("LinearSVC Confusion Matrix (Phishing Detection)")
 plt.tight_layout()
 plt.show()
 
+'''
+Underwater Sonar Target Detection (Mines vs. Rocks)
+Chronic Kidney Disease (CKD) Early Detection
+'''
